@@ -15,5 +15,8 @@ Branch Selection: check master
 
 Destination: Leave defaults or set custom path
 
-Import as general project
+Use the New Project wizard
 
+Android | Android Project from Existing Code
+
+Root Directory: Browse to folder you specified for the destination
