@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/button_config">
+  <PreferenceCategory  android:layout="@layout/buttonpref">
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_n_press"
+        android:title="@string/pref_n_press"
+        android:dialogTitle="@string/pref_n_press"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_n_long"
+        android:title="@string/pref_n_long"
+        android:dialogTitle="@string/pref_n_long"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+  </PreferenceCategory>
+  <PreferenceCategory android:title="@string/pref_title_quicknav">
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_quicknav_1"
+        android:title="@string/pref_quicknav_1"
+        android:dialogTitle="@string/pref_quicknav_1"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_quicknav_2"
+        android:title="@string/pref_quicknav_2"
+        android:dialogTitle="@string/pref_quicknav_2"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_quicknav_3"
+        android:title="@string/pref_quicknav_3"
+        android:dialogTitle="@string/pref_quicknav_3"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_quicknav_4"
+        android:title="@string/pref_quicknav_4"
+        android:dialogTitle="@string/pref_quicknav_4"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_quicknav_6"
+        android:title="@string/pref_quicknav_6"
+        android:dialogTitle="@string/pref_quicknav_6"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_quicknav_5"
+        android:title="@string/pref_quicknav_5"
+        android:dialogTitle="@string/pref_quicknav_5"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+  </PreferenceCategory>
+  <PreferenceCategory android:title="@string/pref_title_statusbar">
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_statusbar_readnow"
+        android:title="@string/pref_statusbar_readnow"
+        android:dialogTitle="@string/pref_statusbar_readnow"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_statusbar_back"
+        android:title="@string/pref_statusbar_back"
+        android:dialogTitle="@string/pref_statusbar_back"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_statusbar_menu"
+        android:title="@string/pref_statusbar_menu"
+        android:dialogTitle="@string/pref_statusbar_menu"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_statusbar_glowlight"
+        android:title="@string/pref_statusbar_glowlight"
+        android:dialogTitle="@string/pref_statusbar_glowlight"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+  </PreferenceCategory>
+</PreferenceScreen>

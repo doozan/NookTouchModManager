@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Nook Touch Mods</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Nook Touch Mod Manager</string>
+    <string name="title_activity_button_config">Configure Buttons</string>
+
+    <string name="detected_jars">Found modified jars</string>
+    <string name="no_jars">You must install the modified jars before using this program.</string>
+    
+    <string name="button_install_jars">Install Modified Jars</string>
+    
+    <string name="button_config_mods">Configure Mod Options</string>
+    <string name="always_show_status_icons">Always display back/menu on statusbar</string>
+    <string name="disable_drag_to_unlock">Disable drag to unlock screensaver</string>
+    
+	<string name="button_config">Modify Button Actions</string>
+
+    <string name="pref_title_n">n button</string>
+    <string name="pref_n_press">n button</string>
+    <string name="pref_n_long">n button (Long Press)</string>
+    
+    <string name="pref_title_quicknav">Quicknav Buttons</string>
+    <string name="pref_quicknav_1">Quicknav - Home</string>
+    <string name="pref_quicknav_2">Quicknav - Library</string>
+    <string name="pref_quicknav_3">Quicknav - Shop</string>
+    <string name="pref_quicknav_4">Quicknav - Search</string>
+    <string name="pref_quicknav_5">Quicknav - Settings</string>
+    <string name="pref_quicknav_6">Quicknav - GlowLight</string>
+    
+    <string name="pref_title_statusbar">Statusbar Buttons</string>
+    <string name="pref_statusbar_readnow">Statusbar - Read Now</string>
+    <string name="pref_statusbar_back">Statusbar - Back</string>
+    <string name="pref_statusbar_menu">Statusbar - Menu</string>
+    <string name="pref_statusbar_glowlight">Statusbar - Glowlight</string>
+    <string name="pref_statusbar_clock">Statusbar - Clock</string>
+
+    <string name="action_default">Default</string>
+    <string name="action_back">Back</string>
+    <string name="action_home">Home</string>
+    <string name="action_menu">Menu</string>
+	<string name="action_search">Search</string>
+    <string name="action_search_long">Search (Long Press)</string>
+    <string name="action_orientation">Change Orientation</string>
+    <string name="action_quicknav">Quicknav</string>
+    <string name="action_glowlight">Glowlight On/Off</string>
+    <string name="action_glowlight_control">Glowlight Control</string>
+    
+    <string name="pref_actions_default">Default</string>
+
+    <string-array name="empty"></string-array>
+</resources>
