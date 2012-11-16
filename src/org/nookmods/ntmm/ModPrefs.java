@@ -12,32 +12,32 @@ import android.util.Log;
 
 public class ModPrefs extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 
-	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);        
-		addPreferencesFromResource(R.xml.mods);
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    addPreferencesFromResource(R.xml.mods);
 
-		getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
-    }
-    
-    @Override
-    protected void onResume() {
-        super.onResume();
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
-    }
+    getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+  }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);    
-    }
+  @Override
+  protected void onResume() {
+    super.onResume();
+    getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+  }
 
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-    	Log.v("NTM", "Pref " + key + " changed");
+  @Override
+  protected void onPause() {
+    super.onPause();
+    getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+  }
 
-		ContentResolver resolver = getApplicationContext().getContentResolver();
-  		String value = sharedPreferences.getBoolean(key, false) ? "1" : "0";    	
-		Settings.System.putString(resolver, "mod.option." + key, value);
-    }
+  public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+    //Log.v("NTM", "Pref " + key + " changed");
+
+    ContentResolver resolver = getApplicationContext().getContentResolver();
+    String value = sharedPreferences.getBoolean(key, false) ? "1" : "0";
+    Settings.System.putString(resolver, "mod.option." + key, value);
+  }
 
 }
