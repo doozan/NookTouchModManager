@@ -15,8 +15,15 @@ public class ModPrefs extends PreferenceActivity implements OnSharedPreferenceCh
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    addPreferencesFromResource(R.xml.mods);
 
+    ContentResolver resolver = getApplicationContext().getContentResolver();
+    Boolean bHasGlowlight = ( Integer.parseInt(Settings.System.getString(resolver, "has_glowlight")) > 0);
+
+    if (bHasGlowlight)
+      addPreferencesFromResource(R.xml.mods_glowlight);
+    else
+      addPreferencesFromResource(R.xml.mods);
+    
     getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
   }
 

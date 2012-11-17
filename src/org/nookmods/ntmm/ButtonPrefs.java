@@ -21,11 +21,8 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
 
   public static final String TAG = "NTMM.ButtonPrefs";
 
-  private boolean bHasGlowlight;
   private static ArrayList<NookButton> buttons;
   private static ArrayList<Action> actions;
-
-  public boolean hasGlowlight() { return bHasGlowlight; }
 
   private void initActions(boolean bHasGlowlight)
   {
@@ -62,7 +59,7 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
     actions.add( new Action("search_long",
                 res.getString( R.string.action_search_long ),
                 res.getIdentifier("ic_menu_search", "drawable", "android"),
-                "LONGKEY:" + KeyEvent.KEYCODE_SEARCH) );
+                "BROADCAST:android.intent.action.SEARCH_LONG_PRESS") );
 
     actions.add( new Action("quicknav",
                 res.getString( R.string.action_quicknav ),
@@ -132,7 +129,7 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
     super.onCreate(savedInstanceState);
 
     ContentResolver resolver = getApplicationContext().getContentResolver();
-    bHasGlowlight = ( Integer.parseInt(Settings.System.getString(resolver, "has_glowlight")) > 0);
+    Boolean bHasGlowlight = ( Integer.parseInt(Settings.System.getString(resolver, "has_glowlight")) > 0);
 
     if (bHasGlowlight)
       addPreferencesFromResource(R.xml.buttons_glowlight);

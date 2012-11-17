@@ -12,6 +12,7 @@
     <string name="button_config_mods">Configure Mod Options</string>
     <string name="always_show_status_icons">Always display back/menu on statusbar</string>
     <string name="disable_drag_to_unlock">Disable drag to unlock screensaver</string>
+    <string name="restore_glowlight_on_wake">Restore Glowlight after screensaver</string>
     
 	<string name="button_config">Modify Button Actions</string>
 
