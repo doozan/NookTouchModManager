@@ -53,12 +53,12 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
 
     actions.add( new Action("search",
                 res.getString( R.string.action_search ),
-                res.getIdentifier("ic_menu_search", "drawable", "android"),
+                res.getIdentifier("btn_square_search_normal", "drawable", "android"),
                 "KEY:" + KeyEvent.KEYCODE_SEARCH) );
 
     actions.add( new Action("search_long",
                 res.getString( R.string.action_search_long ),
-                res.getIdentifier("ic_menu_search", "drawable", "android"),
+                res.getIdentifier("btn_square_search_normal", "drawable", "android"),
                 "BROADCAST:android.intent.action.SEARCH_LONG_PRESS") );
 
     actions.add( new Action("quicknav",
