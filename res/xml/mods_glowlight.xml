@@ -7,15 +7,28 @@
         android:dialogTitle="@string/always_show_status_icons"
         android:defaultValue="false" />
 
-		<CheckBoxPreference
+	<CheckBoxPreference
         android:key="disable_drag_to_unlock"
         android:title="@string/disable_drag_to_unlock"
         android:dialogTitle="@string/disable_drag_to_unlock"
         android:defaultValue="false" />
 
-		<CheckBoxPreference
+	<CheckBoxPreference
         android:key="restore_glowlight_on_wake"
         android:title="@string/restore_glowlight_on_wake"
         android:dialogTitle="@string/restore_glowlight_on_wake"
         android:defaultValue="false" />
+
+	<CheckBoxPreference
+        android:key="hide_screensaver_banner"
+        android:title="@string/hide_screensaver_banner"
+        android:dialogTitle="@string/hide_screensaver_banner"
+        android:defaultValue="false" />
+		
+	<EditTextPreference
+        android:key="custom_banner_text"
+        android:title="@string/custom_banner_text"
+        android:dialogTitle="@string/custom_banner_text"
+        android:defaultValue="" />
+		
 </PreferenceScreen>

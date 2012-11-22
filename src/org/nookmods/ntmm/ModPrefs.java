@@ -6,6 +6,9 @@ import android.content.ContentResolver;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.EditTextPreference;
+import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.provider.Settings;
 import android.util.Log;
@@ -42,9 +45,20 @@ public class ModPrefs extends PreferenceActivity implements OnSharedPreferenceCh
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     //Log.v("NTM", "Pref " + key + " changed");
 
-    ContentResolver resolver = getApplicationContext().getContentResolver();
-    String value = sharedPreferences.getBoolean(key, false) ? "1" : "0";
-    Settings.System.putString(resolver, "mod.option." + key, value);
+    if (getPreferenceScreen().findPreference( key ).getClass().equals(CheckBoxPreference.class))
+    {
+      ContentResolver resolver = getApplicationContext().getContentResolver();
+      String value = sharedPreferences.getBoolean(key, false) ? "1" : "0";
+      Settings.System.putString(resolver, "mod.option." + key, value);
+    }
+    else if (getPreferenceScreen().findPreference( key ).getClass().equals(EditTextPreference.class))
+    {
+      ContentResolver resolver = getApplicationContext().getContentResolver();
+      String value = sharedPreferences.getString(key, "");
+      Settings.System.putString(resolver, "mod.misc." + key, value);
+    }
+    
+    
   }
 
 }

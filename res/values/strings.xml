@@ -13,6 +13,8 @@
     <string name="always_show_status_icons">Always display back/menu on statusbar</string>
     <string name="disable_drag_to_unlock">Disable drag to unlock screensaver</string>
     <string name="restore_glowlight_on_wake">Restore Glowlight after screensaver</string>
+    <string name="hide_screensaver_banner">Hide screensaver banner</string>
+    <string name="custom_banner_text">Customize banner text</string>
     
 	<string name="button_config">Modify Button Actions</string>
 
