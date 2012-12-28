@@ -17,6 +17,72 @@
         android:entryValues="@array/empty"
         android:defaultValue="@string/pref_actions_default" />
   </PreferenceCategory>
+  <PreferenceCategory  android:title="@string/pref_title_sidebtn">
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_topleft_press"
+        android:title="@string/pref_topleft_press"
+        android:dialogTitle="@string/pref_topleft_press"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_bottomleft_press"
+        android:title="@string/pref_bottomleft_press"
+        android:dialogTitle="@string/pref_bottomleft_press"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_topright_press"
+        android:title="@string/pref_topright_press"
+        android:dialogTitle="@string/pref_topright_press"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_bottomright_press"
+        android:title="@string/pref_bottomright_press"
+        android:dialogTitle="@string/pref_bottomright_press"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+  </PreferenceCategory>
+  <PreferenceCategory  android:title="@string/pref_title_sidebtn_long">
+    <EditTextPreference
+        android:key="pref_sidebtndelay_long"
+        android:title="@string/pref_sidebtndelay_long"
+        android:numeric="integer"
+        android:maxLength="4"
+        android:defaultValue="2000" />
+      <org.nookmods.ntmm.AppSelector
+        android:key="pref_topleft_long"
+        android:title="@string/pref_topleft_long"
+        android:dialogTitle="@string/pref_topleft_long"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_bottomleft_long"
+        android:title="@string/pref_bottomleft_long"
+        android:dialogTitle="@string/pref_bottomleft_long"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_topright_long"
+        android:title="@string/pref_topright_long"
+        android:dialogTitle="@string/pref_topright_long"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+    <org.nookmods.ntmm.AppSelector
+        android:key="pref_bottomright_long"
+        android:title="@string/pref_bottomright_long"
+        android:dialogTitle="@string/pref_bottomright_long"
+        android:entries="@array/empty"
+        android:entryValues="@array/empty"
+        android:defaultValue="@string/pref_actions_default" />
+  </PreferenceCategory>
   <PreferenceCategory android:title="@string/pref_title_quicknav">
     <org.nookmods.ntmm.AppSelector
         android:key="pref_quicknav_1"

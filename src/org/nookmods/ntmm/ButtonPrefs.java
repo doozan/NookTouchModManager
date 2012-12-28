@@ -11,6 +11,8 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.provider.Settings;
@@ -66,6 +68,31 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
                 res.getIdentifier("c_quicknav_home_normal_sm", "drawable", "android"),
                 "QUICKNAV") );
 
+    actions.add( new Action("readingnow",
+                res.getString( R.string.action_readingnow ),
+                res.getIdentifier("ic_menu_view", "drawable", "android"),
+                "BROADCAST:com.bn.nook.launch.LAST_BOOK") );
+
+    actions.add( new Action("tapleft",
+                res.getString( R.string.action_tapleft ),
+                res.getIdentifier("ic_menu_back", "drawable", "android"),
+                "TAP:10;400") );
+
+    actions.add( new Action("tapright",
+                res.getString( R.string.action_tapright ),
+                res.getIdentifier("ic_menu_forward", "drawable", "android"),
+                "TAP:590;400") );
+
+    actions.add( new Action("volumeup",
+                res.getString( R.string.action_volumeup ),
+                res.getIdentifier("btn_zoom_up", "drawable", "android"),
+                "KEY:" + KeyEvent.KEYCODE_VOLUME_UP) );
+
+    actions.add( new Action("volumedown",
+                res.getString( R.string.action_volumedown ),
+                res.getIdentifier("btn_zoom_down", "drawable", "android"),
+                "KEY:" + KeyEvent.KEYCODE_VOLUME_DOWN) );
+
     if ( ! bHasGlowlight ) return;
 
     actions.add( new Action("glowlight",
@@ -83,6 +110,14 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
     buttons = new ArrayList<NookButton>();
     buttons.add( new NookButton("key.home",             "pref_n_press") );
     buttons.add( new NookButton("key.home_long",        "pref_n_long") );
+    buttons.add( new NookButton("key.topleft",          "pref_topleft_press") );
+    buttons.add( new NookButton("key.bottomleft",       "pref_bottomleft_press") );
+    buttons.add( new NookButton("key.topright",         "pref_topright_press") );
+    buttons.add( new NookButton("key.bottomright",      "pref_bottomright_press") );
+    buttons.add( new NookButton("key.topleft_long",     "pref_topleft_long") );
+    buttons.add( new NookButton("key.bottomleft_long",  "pref_bottomleft_long") );
+    buttons.add( new NookButton("key.topright_long",    "pref_topright_long") );
+    buttons.add( new NookButton("key.bottomright_long", "pref_bottomright_long") );
     buttons.add( new NookButton("quicknav.1",           "pref_quicknav_1") );
     buttons.add( new NookButton("quicknav.2",           "pref_quicknav_2") );
     buttons.add( new NookButton("quicknav.3",           "pref_quicknav_3") );
@@ -147,8 +182,17 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
     super.onResume();
     getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
 
-    for (String key : getPreferenceScreen().getSharedPreferences().getAll().keySet() )
-      setSummary( (ListPreference) getPreferenceScreen().findPreference( key ) );
+    for (String key : getPreferenceScreen().getSharedPreferences().getAll().keySet() ) {
+      Preference pref = getPreferenceScreen().findPreference( key );
+      if (pref != null){
+        String value = getPreferenceScreen().getSharedPreferences().getString(key, "");
+        if (pref instanceof ListPreference) {
+          setButtonSummary((ListPreference) pref, value);
+        }
+        else
+          setEditTextSummary( (EditTextPreference) pref, value);
+      }
+    }
   }
 
   @Override
@@ -161,14 +205,18 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
     //Log.v(TAG, "Pref changed " + key);
     String value = sharedPreferences.getString(key, "");
 
-    setSummary( (ListPreference)getPreferenceScreen().findPreference( key ), value );
-
+    Preference pref = getPreferenceScreen().findPreference( key );
     NookButton button = getButton( key );
-    if ( button != null)
+    if ( button != null) {
+      setButtonSummary( (ListPreference) pref, value );
       button.setValue( this, value );
+    }
+    else {
+      setEditTextSummary ( (EditTextPreference) pref, value);
+    }
   }
 
-  private void setSummary(ListPreference pref, String value)
+  private void setButtonSummary(ListPreference pref, String value)
   {
     if (pref == null) return;
     if (value == null || value.length() <= 0) return;
@@ -177,13 +225,12 @@ public class ButtonPrefs extends PreferenceActivity implements OnSharedPreferenc
     pref.setSummary( item.label );
   }
 
-  private void setSummary(ListPreference pref)
+  private void setEditTextSummary(EditTextPreference pref, String value)
   {
-    if (pref == null) {
-      Log.v("NTM", "Pref is null");
-      return;
-    }
-    setSummary(pref, pref.getValue());
+    if (pref == null) return;
+    if (value == null || value.length() <= 0) return;
+
+    pref.setSummary( value );
   }
 
   public String parseValue(String id, String prefix)

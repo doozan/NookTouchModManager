@@ -22,6 +22,19 @@
     <string name="pref_n_press">n button</string>
     <string name="pref_n_long">n button (Long Press)</string>
     
+    <string name="pref_title_sidebtn">Side Hardware Buttons</string>
+    <string name="pref_topleft_press">Side Button - Top Left</string>
+    <string name="pref_bottomleft_press">Side Button - Bottom Left</string>
+    <string name="pref_topright_press">Side Button - Top Right</string>
+    <string name="pref_bottomright_press">Side Button - Bottom Right</string>
+
+    <string name="pref_title_sidebtn_long">Side Hardware Buttons (Long Press)</string>
+    <string name="pref_sidebtndelay_long">Side Button Milliseconds For Long Press</string>
+    <string name="pref_topleft_long">Side Button - Top Left (Long Press)</string>
+    <string name="pref_bottomleft_long">Side Button - Bottom Left (Long Press)</string>
+    <string name="pref_topright_long">Side Button - Top Right (Long Press)</string>
+    <string name="pref_bottomright_long">Side Button - Bottom Right (Long Press)</string>
+
     <string name="pref_title_quicknav">Quicknav Buttons</string>
     <string name="pref_quicknav_1">Quicknav - Home</string>
     <string name="pref_quicknav_2">Quicknav - Library</string>
@@ -41,10 +54,15 @@
     <string name="action_back">Back</string>
     <string name="action_home">Home</string>
     <string name="action_menu">Menu</string>
-	<string name="action_search">Search</string>
+    <string name="action_search">Search</string>
     <string name="action_search_long">Search (Long Press)</string>
     <string name="action_orientation">Change Orientation</string>
     <string name="action_quicknav">Quicknav</string>
+    <string name="action_readingnow">Reading Now</string>
+    <string name="action_tapleft">Tap Left (Previous Page)</string>
+    <string name="action_tapright">Tap Right (Next Page)</string>
+    <string name="action_volumeup">Volume Up</string>
+    <string name="action_volumedown">Volume Down</string>
     <string name="action_glowlight">Glowlight On/Off</string>
     <string name="action_glowlight_control">Glowlight Control</string>
     
